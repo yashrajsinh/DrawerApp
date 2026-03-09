@@ -9,9 +9,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from './src/screens/HomeScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import SearchScreen from './src/screens/SearchScreen';
-
-//Custom Icon
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { Text } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
@@ -20,13 +18,14 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator
         screenOptions={({ navigation }) => ({
+          drawerType: 'slide',
           headerLeft: () => (
-            <Icon
-              name="menu"
-              size={28}
-              style={{ marginLeft: 15 }}
+            <Text
+              style={{ fontSize: 24, marginLeft: 15 }}
               onPress={() => navigation.toggleDrawer()}
-            />
+            >
+              🟰
+            </Text>
           ),
         })}
       >
